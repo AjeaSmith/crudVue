@@ -1,0 +1,24 @@
+* This step by step guide is to help explain in detail what I did in this project, and why I did it *
+
+- Overview of project idea - 
+
+this project is designed to resymbol a crud application, were you can add book titles, 
+
+delete them and edit. However, in this app we I'm only doing two of the operations which are 
+
+create and delete. 
+
+<---- Steps ----->
+1. The first thing I thought about was what functionality I needed to have and focus on, in my case it was the create and delete functionalities. So I started with the create functionality.
+
+2. I focus my attention on the input field becuase thats were I had to start in order to get values from the input. Inside the input text field, NOT input submit! I added the v-model directive, which will be the input text by default. Set it to "booktext" that's a empty string in the component data. -->CODE: v-model="booktext"
+
+NOTE: to check this, below the form place a p tag, inside that, place double braces with booktext, you should see whatever you type in will show in that p tag as you type. This is how you know you are getting the text back. --> Good thing :)
+
+3. Once you have that text, you now want to add that to the list when the input submit button in clicked. So, next we had a click event to that input submit using v-on:click directive, which tells the input submit to run a method when its clicked, in our case its the "add" method -->CODE: v-on:click="add"
+
+4. In the data function I created a empty booklist array -->CODE: booklist: [] and id: 1, Ill explain id part later on. 
+
+5. In my add() function I created a ternary operator saying that, if the booktext is empty just return becuase we dont want to add that empty string to our booklist array, or if someone did type something push that text into our booklist array along with a id that increments everytime a title is added * Look at code for clearer view :) * then we want to make booktext be empty string after submitting so we wont see previous text.
+
+6. 
